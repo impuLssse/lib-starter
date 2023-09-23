@@ -1,0 +1,33 @@
+{
+  "name": "wolf-inside",
+  "version": "1.0.0",
+  "description": "Core logic for wolf-bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev && npm run go",
+    "go": "npx tsc-watch --onSuccess \"node dist/index.js\""
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "@impuLssse666:registry": "https://npm.pkg.github.com/"
+  },
+  "private": "true",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^20.6.3",
+    "@types/tsc-watch": "^4.2.1",
+    "nodemon": "^3.0.1",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "source": "src/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
