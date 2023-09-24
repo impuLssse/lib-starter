@@ -1,0 +1,9 @@
+{
+  "ignore": ["**/*.test.ts", "**/*.spec.ts", ".git", "node_modules"],
+  "watch": ["src"],
+  "exec": "npx ts-node src/main.ts",
+  "events": {
+    "restart": "node -e console.clear()"
+  },
+  "quiet": true
+}
