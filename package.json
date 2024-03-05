@@ -1,18 +1,15 @@
 {
-  "name": "lib-starter",
+  "name": "downloader-music-bot",
   "version": "1.0.0",
-  "description": "Lightweight starter for library coding (verdaccio)",
-  "main": "dist/index.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon -w"
   },
-  "keywords": [],
   "author": "impuLssse911",
-  "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^20.6.3",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "nodemon": "^3.0.1",
     "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
@@ -20,7 +17,13 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"
   },
-  "source": "src/index.ts",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts"
+  "dependencies": {
+    "@telegraf/session": "^2.0.0-beta.7",
+    "axios": "^1.6.7",
+    "kysely": "^0.27.2",
+    "mysql2": "^3.9.2",
+    "telegraf": "^4.16.3",
+    "telegram-keyboard": "^2.3.5",
+    "yandex-music-client": "^0.4.3"
+  }
 }
