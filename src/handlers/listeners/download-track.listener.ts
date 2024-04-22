@@ -1,18 +1,15 @@
-import { findYandexTrackIdInMessage } from "@libs/utils";
+import { IContext } from "@libs/interfaces";
+import { findYandexTrackIdInMessage, waterMark } from "@libs/utils";
 import { MusicApi, bot } from "@main";
 
-bot.hears(/music.yandex.com/, async (ctx) => {
+bot.hears(/music.yandex.com/, async (ctx: IContext) => {
   const slicedTrackId = findYandexTrackIdInMessage(ctx.message.text);
-  console.log(`slicedTrackId`, slicedTrackId);
-
+  
   const foundTrack = await MusicApi.Yandex.getTrack(slicedTrackId);
   if (!foundTrack) {
     return "Track not found";
   }
   const downloadedTrack = await MusicApi.Yandex.downloadTrack(foundTrack);
-
-  console.log(`foundTrack`, foundTrack);
-  console.log(`downloadedTrack`, downloadedTrack);
 
   try {
     await ctx.telegram.sendAudio(
@@ -23,7 +20,7 @@ bot.hears(/music.yandex.com/, async (ctx) => {
       },
       {
         parse_mode: "HTML",
-        caption: `trackId: <code>${slicedTrackId}</code>`,
+        caption: waterMark(ctx)
       }
     );
   } catch (e) {

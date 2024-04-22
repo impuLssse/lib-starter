@@ -24,6 +24,8 @@
     "mysql2": "^3.9.2",
     "telegraf": "^4.16.3",
     "telegram-keyboard": "^2.3.5",
-    "yandex-music-client": "^0.4.3"
+    "yandex-music-client": "^0.4.3",
+    "youtube-sr": "^4.3.11",
+    "ytdl-core": "^4.11.5"
   }
 }

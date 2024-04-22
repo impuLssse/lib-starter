@@ -1,8 +1,8 @@
+import { SessionData } from "@libs/interfaces";
 import { MySQL } from "@telegraf/session/mysql";
-import { MysqlDialect } from "kysely";
 
 export const store = () => {
-  return MySQL<MysqlDialect>({
+  return MySQL<SessionData>({
     database: process.env.DATABASE_NAME,
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,

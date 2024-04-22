@@ -4,7 +4,7 @@ import { config } from "dotenv";
 import { store } from "@store";
 config();
 
-export const bot = new Telegraf(process.env.BOT_TOKEN);
+export const bot = new Telegraf<IContext>(process.env.BOT_TOKEN);
 import { YandexMusicApi } from "@music/yandex";
 
 export namespace MusicApi {
@@ -30,6 +30,7 @@ bootstrap();
  */
 import "@handlers/commands";
 import "@handlers/listeners";
+import { IContext } from "@libs/interfaces";
 
 process.on("uncaughtException", (error: Error & { code }, origin) => {
   console.error(error);
